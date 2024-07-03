@@ -49,7 +49,8 @@ pipeline {
         }
         stage("Docker build") {
             steps {
-                sh "docker build -t cmacondocker/calculator ."
+                def myEnv = docker.build 'cmacondocker/calculator'
+                // sh "docker build -t cmacondocker/calculator ."
             }
         }
     }
